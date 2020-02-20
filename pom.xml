@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.atlassian.springframework.boot</groupId>
-    <artifactId>spring-boot-mdc-logging-starter</artifactId>
+    <artifactId>spring-boot-starter-mdc-logging-annotation</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -11,7 +11,7 @@
     <url>https://bitbucket.org/atlassian/spring-boot-mdc-logging-starter</url>
 
     <scm>
-        <developerConnection>scm:git:ssh://git@bitbucket.org/atlassian/spring-boot-mdc-logging-starter.git
+        <developerConnection>scm:git:ssh://git@bitbucket.org/atlassian/spring-boot-starter-mdc-logging-annotation.git
         </developerConnection>
         <tag>HEAD</tag>
     </scm>
@@ -43,6 +43,7 @@
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
@@ -94,6 +95,19 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>atlassian-private</id>
+            <name>Atlassian Private Repository</name>
+            <url>https://maven.atlassian.com/private</url>
+        </repository>
+        <snapshotRepository>
+            <id>atlassian-private-snapshot</id>
+            <name>Atlassian Private Snapshot Repository</name>
+            <url>https://maven.atlassian.com/private-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 
 </project>
