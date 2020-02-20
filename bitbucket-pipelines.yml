@@ -12,4 +12,4 @@ pipelines:
         script:
           - pipe: atlassian/artifactory-sidekick:v1
           - source .artifactory/activate.sh
-          - mvn build
+          - mvn deploy
