@@ -1,0 +1,22 @@
+.gradle/
+.idea/
+**/*.iml
+build
+**/build/
+**/node_modules
+**/target/
+**/*.bak
+
+# Bamboo Spec Ignored Files
+.credentials
+out
+src/main/resources/refresh.txt
+src/main/resources/client_secrets.json
+.gradletasknamecache
+src/main/resources/micros.yml
+.asap-config
+environment-variables-to-run
+environment-variables-to-run.json
+.kotlintest
+client_secrets.json
+src/main/resources/nanos-properties.yml
