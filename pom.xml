@@ -98,15 +98,10 @@
 
     <distributionManagement>
         <repository>
-            <id>atlassian-private</id>
-            <name>Atlassian Private Repository</name>
-            <url>https://maven.atlassian.com/private</url>
+            <id>central</id>
+            <name>11415a12eaf5-releases</name>
+            <url>https://packages.atlassian.com/maven-central-local</url>
         </repository>
-        <snapshotRepository>
-            <id>atlassian-private-snapshot</id>
-            <name>Atlassian Private Snapshot Repository</name>
-            <url>https://maven.atlassian.com/private-snapshot</url>
-        </snapshotRepository>
     </distributionManagement>
 
 
