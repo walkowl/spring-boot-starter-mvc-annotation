@@ -3,13 +3,13 @@
 This Spring Boot starter provides annotation @LogWithMDC which can be used for marking Spring Bean method's fields 
 and automatically puts them into MDC context at the beginning of the method and removes at the end.
 
-# Compatibility #
+## Compatibility ##
 
 Tested with Micros Spring Boot >= 2.2.0 (including 3.x.x) in Java and Kotlin.
 
-# Installation #
+## Installation ##
 
-## Maven ##
+### Maven ###
 ```xml
 <dependency>
     <groupId>com.atlassian.springframework.boot</groupId>
@@ -18,12 +18,12 @@ Tested with Micros Spring Boot >= 2.2.0 (including 3.x.x) in Java and Kotlin.
 </dependency>
 ```
 
-# Usage #
+## Usage ##
 
 Just mark field(s) of a public method (please read Caveats below) with annotation `@LogWithMDC` and that's it!
 From now on, all the logs added in that method (and deeper) will contain MDC tag with that field's name and its `toString` value.
 
-## Example ##
+### Example ###
 
 ```java
 
@@ -34,15 +34,15 @@ public Page<Team> getAllTeams(@LogWithMDC CloudId cloudId, PaginationParams pagi
 
 All log entries within getAllTeam method context will contain MDC field `cloudId` with its value.
 
-# Caveats #
+## Caveats ##
 
-## AspectJ ##
+### AspectJ ###
 
 This starter uses [AspectJ AOP](https://www.eclipse.org/aspectj/). It uses load-time weaving and should 
 have minimal / close to none performance impact. However, please consider if it doesn't interfere with other
 elements of your service.
 
-## It works for Spring Bean's calls only ##
+### It works for Spring Bean's calls only ###
 
 Since AOP aspects work only for calls going through the AspectJ proxy, not all calls can be intercepted.
 
@@ -82,7 +82,7 @@ public class Foo {
 }
 ```
 
-## Logging complex objects and PII
+### Logging complex objects and PII ###
 
 Please be aware, that evaluation of the tag's value is made by calling `toString` method of the annotated method 
 and currently there's no way to filter out not wanted fields. 
