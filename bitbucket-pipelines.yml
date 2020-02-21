@@ -1,20 +1,34 @@
-# This is a sample build configuration for Java (Maven).
-# Check our guides at https://confluence.atlassian.com/x/zd-5Mw for more examples.
-# Only use spaces to indent your .yml configuration.
-# -----
-# You can specify a custom docker image from Docker Hub as your build environment.
 image: maven:3.6.1
 
-pipelines:
-  default:
-    - step:
-        name: build
+definitions:
+  steps:
+    - step: &release
+        name: release
+        trigger: manual
+        services:
+          - docker
         script:
-          - set -euf
-          # Run the pipe to generate the .artifactory directory
+          - pipe: atlassian/artifactory-sidekick:v1
+          - source .artifactory/activate.sh
+
+          - mvn --batch-mode deploy -DskipTests=true -Dversion=1.${BITBUCKET_BUILD_NUMBER}.0
+    - step: &run-tests
+        name: run-tests
+        caches:
+          - maven
+        script:
           - pipe: atlassian/artifactory-sidekick:v1
           # Install the config files to the home directory and add env vars
           - source .artifactory/activate.sh
           # The script puts a settings.xml in the home directory so you can use mvn immediately
-          - mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.1:get -Dartifact=com.atlassian.buildeng:test-upload:1.0.76:jar
-          - mvn deploy
+          - bash bin/configure-pipelines.sh
+          - mvn -B verify -Dversion=1.${BITBUCKET_BUILD_NUMBER} # -B batch mode makes Maven less verbose
+
+pipelines:
+  default:
+    - step: *run-tests
+
+  branches:
+    master:
+      - step: *run-tests
+      - step: *release

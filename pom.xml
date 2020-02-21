@@ -2,19 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.atlassian.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-mdc-logging-annotation</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <groupId>com.atlassian.identity.group-model</groupId>
+    <artifactId>group-events-model</artifactId>
+    <version>${version}</version>
 
     <name>Spring Boot AutoConfiguration :: Easier MDC logging</name>
     <url>https://bitbucket.org/atlassian/spring-boot-mdc-logging-starter</url>
-
-    <scm>
-        <developerConnection>scm:git:ssh://git@bitbucket.org/atlassian/spring-boot-starter-mdc-logging-annotation.git
-        </developerConnection>
-        <tag>HEAD</tag>
-    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -95,14 +88,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>central</id>
-            <name>11415a12eaf5-releases</name>
-            <url>https://packages.atlassian.com/maven-central-local</url>
-        </repository>
-    </distributionManagement>
-
-
 </project>
