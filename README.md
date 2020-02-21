@@ -5,7 +5,7 @@ and automatically puts them into MDC context at the beginning of the method and 
 
 # Compatibility #
 
-Tested with Micros Spring Boot >= 2.2.0 (including 3.x.x)
+Tested with Micros Spring Boot >= 2.2.0 (including 3.x.x) in Java and Kotlin.
 
 # Installation #
 
