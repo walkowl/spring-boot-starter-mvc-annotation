@@ -2,8 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.atlassian.identity.group-model</groupId>
-    <artifactId>group-events-model</artifactId>
+    <groupId>com.atlassian.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-mdc-logging-annotation</artifactId>
     <version>${version}</version>
 
     <name>Spring Boot AutoConfiguration :: Easier MDC logging</name>
