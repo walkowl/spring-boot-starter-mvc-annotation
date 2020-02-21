@@ -1,6 +1,6 @@
 # Spring Boot MVC annotation starter #
 
-This Spring Boot (2.x.x) starter provides annotation @LogWithMDC which can be used for marking Spring Bean method's fields 
+This Spring Boot (2.x) starter provides annotation @LogWithMDC which can be used for marking Spring Bean method's fields 
 and automatically puts them into MDC context at the beginning of the method and removes at the end.
 
 # Installation #
