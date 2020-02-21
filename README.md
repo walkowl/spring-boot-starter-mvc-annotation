@@ -5,7 +5,7 @@ and automatically puts them into MDC context at the beginning of the method and 
 
 # Installation #
 
-Maven:
+## Maven ##
 ```xml
 <dependency>
     <groupId>com.atlassian.springframework.boot</groupId>
@@ -14,7 +14,12 @@ Maven:
 </dependency>
 ```
 
-Usage:
+# Usage #
+
+Just mark field(s) of a public method (please read Caveats below) with annotation `@LogWithMDC` and that's it!
+From now on, all the logs added in that method (and deeper) will contain MDC tag with that field's name and its `toString` value.
+
+## Example ##
 
 ```java
 
